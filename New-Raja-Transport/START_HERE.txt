@@ -1,0 +1,21 @@
+NEW RAJA TRANSPORT — QUICK START
+
+WINDOWS:
+1. Install Node.js 22.13+ from https://nodejs.org/
+2. Extract all files from the zip.
+3. Double-click START_WINDOWS.bat.
+4. Open http://localhost:3000 in Edge or Chrome.
+5. Create your administrator username and password on first use.
+6. Add a customer, then a freight booking, then received payments.
+
+MOBILE:
+1. Keep the PC/server running.
+2. Connect your phone to the same Wi-Fi network.
+3. Type ipconfig in Windows Command Prompt and find the PC's IPv4 address.
+4. On the phone open http://PC-IP-ADDRESS:3000
+5. Sign in with the same credentials.
+
+Your data lives in data/new-raja-transport.sqlite.
+Use Settings & Backup to download regular backups.
+
+Please read README.md for detailed instructions, limitations and safe hosting.

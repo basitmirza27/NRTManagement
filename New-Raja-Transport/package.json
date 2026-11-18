@@ -1,0 +1,13 @@
+{
+  "name": "new-raja-transport",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Mobile-friendly transport booking, collections and overdue management",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "python tests/test_api.py"
+  },
+  "engines": { "node": ">=22.13.0" },
+  "license": "UNLICENSED"
+}

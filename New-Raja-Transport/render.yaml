@@ -1,0 +1,24 @@
+# New Raja Transport - full backend + frontend (requires a paid Render web service for persistent disk)
+services:
+  - type: web
+    name: new-raja-transport
+    runtime: node
+    plan: starter
+    buildCommand: echo "No build dependencies - Node.js built-in modules only"
+    startCommand: node server.js
+    healthCheckPath: /api/status
+    disk:
+      name: transport-records
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: DATA_DIR
+        value: /var/data
+      - key: TRUST_PROXY
+        value: 'true'
+      - key: COOKIE_SECURE
+        value: 'true'
+      - key: APP_TIMEZONE
+        value: Asia/Kolkata
+      - key: NODE_ENV
+        value: production

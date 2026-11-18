@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#11243b" />
+  <meta name="description" content="New Raja Transport — Transport, freight booking and payment management." />
+  <title>New Raja Transport | Business Dashboard</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="stylesheet" href="/styles.css" />
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <div id="auth-screen" class="auth-screen">
+    <div class="auth-panel">
+      <div class="auth-badge"><span class="logo-mark logo-mark-lg">NR</span></div>
+      <div class="eyebrow accent">TRANSPORT MANAGEMENT SOFTWARE</div>
+      <h1>New Raja <span>Transport</span></h1>
+      <p id="auth-description">Manage every trip, payment and outstanding balance — all in one place.</p>
+      <form id="auth-form" class="form-stack">
+        <label class="field"><span>Username</span><input required name="username" minlength="3" autocomplete="username" placeholder="Enter your username" /></label>
+        <label class="field"><span>Password</span><input required type="password" name="password" minlength="8" autocomplete="current-password" placeholder="Enter your password" /></label>
+        <button class="btn btn-primary btn-full" type="submit" id="auth-submit">Sign in <span aria-hidden="true">→</span></button>
+        <p id="auth-error" class="form-error" hidden></p>
+      </form>
+      <p class="auth-foot">Your business records stay in your own database.</p>
+    </div>
+    <div class="auth-visual">
+      <div class="auth-light"></div>
+      <div class="brand-ring ring-1"></div><div class="brand-ring ring-2"></div>
+      <div class="auth-visual-content">
+        <div class="visual-pill"><span class="live-dot"></span> BUSINESS OPERATIONS, SIMPLIFIED</div>
+        <h2>Keep your business<br /><em>moving forward.</em></h2>
+        <p>From freight bookings to the last pending rupee, bring clarity to every transport transaction.</p>
+        <div class="visual-stats"><div><b>01</b><span>Track bookings</span></div><div><b>02</b><span>Collect payments</span></div><div><b>03</b><span>Grow with confidence</span></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app" class="app-shell" hidden>
+    <div class="mobile-backdrop" id="mobile-backdrop"></div>
+    <aside id="sidebar" class="sidebar">
+      <div class="brand"><span class="logo-mark">NR</span><span class="brand-name">New Raja <strong>Transport</strong><small>OPERATIONS HUB</small></span></div>
+      <div class="sidebar-inner"><div class="sidebar-label">WORKSPACE</div>
+        <nav id="nav-menu" class="nav-menu" aria-label="Main navigation">
+          <button class="nav-link is-active" data-nav="dashboard" type="button"><span data-ico="layout-dashboard"></span><span>Dashboard</span></button>
+          <button class="nav-link" data-nav="bookings" type="button"><span data-ico="package"></span><span>Bookings / LR</span></button>
+          <button class="nav-link" data-nav="payments" type="button"><span data-ico="wallet"></span><span>Payments</span></button>
+          <button class="nav-link" data-nav="customers" type="button"><span data-ico="users"></span><span>Customers</span></button>
+          <button class="nav-link" data-nav="expenses" type="button"><span data-ico="receipt"></span><span>Expenses</span></button>
+          <button class="nav-link" data-nav="reports" type="button"><span data-ico="chart"></span><span>Reports</span></button>
+        </nav>
+        <div class="sidebar-label second-label">ACCOUNT</div>
+        <nav class="nav-menu"><button class="nav-link" data-nav="settings" type="button"><span data-ico="settings"></span><span>Settings & Backup</span></button></nav>
+      </div>
+      <div class="sidebar-bottom"><div class="sidebar-help"><span class="help-icon" data-ico="shield"></span><div><strong>Secure records</strong><small>Stored in your database</small></div></div><button class="sidebar-user" type="button" data-action="logout"><span class="avatar">A</span><span class="user-info"><strong id="sidebar-username">Administrator</strong><small>Sign out</small></span><span data-ico="log-out"></span></button></div>
+    </aside>
+
+    <div class="main-shell">
+      <header class="topbar"><div class="topbar-start"><button class="icon-btn mobile-only" id="menu-toggle" type="button" aria-label="Open menu"><span data-ico="menu"></span></button><div class="crumb"><span class="crumb-prefix">Workspace</span><span class="crumb-separator">/</span><strong id="crumb-title">Dashboard</strong></div></div><div class="topbar-actions"><span id="today-label" class="today-label"></span><button type="button" id="install-app" class="btn btn-quiet btn-sm" hidden><span data-ico="download"></span> Install app</button><button type="button" class="btn btn-primary btn-sm" data-action="new-booking"><span data-ico="plus"></span><span class="topbar-add">New booking</span></button></div></header>
+      <main id="main-content" class="main-content" tabindex="-1"><div class="loading-page"><div class="spinner"></div><p>Loading your business dashboard...</p></div></main>
+      <footer class="app-footer">© <span id="footer-year">2026</span> New Raja Transport <span>·</span> Built for everyday transport operations</footer>
+    </div>
+  </div>
+  <div id="modal-root" class="modal-root" hidden></div>
+  <div id="toast-root" class="toast-root" aria-live="polite"></div>
+  <div id="print-area" class="print-area" aria-hidden="true"></div>
+</body>
+</html>
